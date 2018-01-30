@@ -4,9 +4,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <!--加载另一个xml文件-->
+    <import resource="spring-mybatis.xml"/>
 
     <bean id="helloBean" class="com.liangyuyi.spring.HelloWorld">
         <property name="name" value="liangyuyi"/>
     </bean>
 
+    <!--使用setter的方法注入依赖-->
+    <bean id="outputHelper" class="com.liangyuyi.dependenceIn.OutputHelper">
+        <property name="outputGenerator" ref="csvOutputGenerator"/>
+    </bean>
+    <bean id="csvOutputGenerator" class="com.liangyuyi.dependenceIn.impl.CsvOutputGenerator"/>
 </beans>
