@@ -16,4 +16,9 @@
         <property name="outputGenerator" ref="csvOutputGenerator"/>
     </bean>
     <bean id="csvOutputGenerator" class="com.liangyuyi.dependenceIn.impl.CsvOutputGenerator"/>
+
+    <bean id="customerService" class="com.liangyuyi.aopTest.services.CustomerService">
+        <property name="name" value="liangyuyi"/>
+        <property name="url" value="http://www.liangyuyi.com"/>
+    </bean>
 </beans>
